@@ -41,7 +41,6 @@ class GalleryManager {
       secretAccessKey: secret,
     };
     this.#s3Client = new S3Client(this.#s3Config);
-    return true;
 
     try {
       debugger;
@@ -232,7 +231,7 @@ class GalleryManager {
 }
 
 const s3endpoint = `s3.filebase.com`,
-  s3bucket = `w3gallery-jason`,
+  s3bucket = `w3gallery-jason-cors`,
   galleryEndpoint = `https://${s3bucket}.${s3endpoint}`,
   galleryBioRequest = fetch(`${galleryEndpoint}/bio.md`),
   galleryManager = new GalleryManager(
